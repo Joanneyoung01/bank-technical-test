@@ -25,7 +25,8 @@ date       |  credit |  debit | balance
 
 - As a user
 So that I can add money to my bank account
-I would like to deposit cash into my bank account
+I would like to deposit cash into my bank account 
+Done
 
 - As a user
 So that I can use cash to spend
