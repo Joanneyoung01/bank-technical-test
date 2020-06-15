@@ -1,6 +1,6 @@
 class Bank {
 
-  deposit() {
-    return 500
+  deposit(number) {
+    return number
   }
 }
