@@ -12,7 +12,6 @@ describe("bank", function(){
   });
 
   it("should add to the bank balance", function(){
-    bank.bankBalance = 0;
     expect(bank.deposit(300)).toEqual(300)
   });
 

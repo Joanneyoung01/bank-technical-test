@@ -1,11 +1,15 @@
 class Bank {
 
   constructor() {
-    this.bankBalance = 0
+    this.bankBalance = 0.00
   }
 
-  deposit(number) {
-    this.bankBalance += number
+  format(number){
+    return "£" + number.toFixed(2);
+  }
+
+  deposit(input) {
+    this.bankBalance += input
     return this.bankBalance
   }
 }
