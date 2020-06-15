@@ -3,7 +3,7 @@ class Bank {
   constructor() {
     this.bankBalance = 0.00
     this.date = 0
-    this.statement = [["date", "credit", "debit", "balance"]]
+    this.statement = []
   }
 
   dateFormat(){
@@ -20,7 +20,7 @@ class Bank {
 
   reset(){
     this.bankBalance = 0;
-    this.statement = [["date", "credit", "debit", "balance"]]
+    this.statement = []
   }
 
   deposit(input) {
@@ -35,13 +35,19 @@ class Bank {
   withdraw(input) {
     this.date = this.dateFormat()
     this.bankBalance -= input
+
+    const newLine = [this.date, 0, input.toFixed(2), this.bankBalance.toFixed(2)]
+    this.statement.push(newLine)
     return this.bankBalance
   }
 
   printStatement(){
     var itemized = ""
     var formattedLine = ""
-    this.statement.forEach(function(lines){
+    var arr = this.statement.reverse();
+    arr.unshift(["date", "credit", "debit", "balance"])
+
+    arr.forEach(function(lines){
 
       var date = (lines[0])
       var credit = (lines[1])
@@ -60,8 +66,6 @@ class Bank {
 
       itemized += formattedLine + "\n"
     })
-
-    console.log(itemized)
     return itemized
   }
 

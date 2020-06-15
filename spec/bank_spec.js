@@ -31,7 +31,6 @@ describe("bank", function(){
       bank.reset()
       bank.deposit(100)
       expect(bank.printStatement()).toEqual("date || credit || debit || balance\n1/1/2020 || 100.00 ||  || 100.00\n")
-      console.log(bank.printStatement())
     });
 
     afterEach(() => {
@@ -62,34 +61,32 @@ describe("bank", function(){
     });
   });
 
-  // describe("after built up history of activity", function(){
+  describe("after built up history of activity", function(){
 
-  //   beforeEach(function(){
-  //     bank.reset()
-  //     jasmine.clock().install();
+    it("can print a statement", function(){
+      bank.reset()
+      jasmine.clock().install();
 
-  //     const dayOne = new Date(2012, 14, 01);
-  //     jasmine.clock().mockDate(dayOne);
-  //     bank.deposit(300)
+      var d = new Date("01, 01, 2012");
+      d.setDate(1);    
+      bank.deposit(1000)
 
-  //     const dayTwo = new Date(2020, 13, 01);
-  //     jasmine.clock().mockDate(dayTwo);
-  //     bank.deposit(300)
+      const dayTwo = new Date(2012, 13, 01);
+      jasmine.clock().mockDate(dayTwo);
+      bank.deposit(2000)
 
-  //     bank.reset()
-  //     const dayThree = new Date(2012, 14, 01);
-  //     jasmine.clock().mockDate(dayThree);
-  //     bank.deposit(300)
-  //   });
-    
-  //   it("can print a statement", function(){
-  //     expect(bank.printStatement()).toEqual("date || credit || debit || balance\n14/01/2012 || || 500.00 || 2500.00\n13/01/2012 || 2000.00 || || 3000.00\n10/01/2012 || 1000.00 || || 1000.00")
-  //   });
+      const dayThree = new Date(2012, 14, 01);
+      jasmine.clock().mockDate(dayThree);
+      bank.withdraw(500)
 
-  //   afterEach(() => {
-  //     jasmine.clock().uninstall();
-  //   });
-  // });
+      console.log(bank.statement)
+      expect(bank.printStatement()).toEqual("date || credit || debit || balance\n14/01/2012 || || 500.00 || 2500.00\n13/01/2012 || 2000.00 ||  || 3000.00\n10/01/2012 || 1000.00 ||  || 1000.00")
+    });
+
+    afterAll(() => {
+      jasmine.clock().uninstall();
+    });
+  });
 
 
 });
