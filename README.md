@@ -7,11 +7,11 @@ Account statement (date, amount, balance) printing.
 Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
 # Acceptance Criteria #
-Given a client makes a deposit of 1000 on 10-01-2012
-And a deposit of 2000 on 13-01-2012
-And a withdrawal of 500 on 14-01-2012
-When she prints her bank statement
-Then she would see
+- Given a client makes a deposit of 1000 on 10-01-2012
+- And a deposit of 2000 on 13-01-2012
+- And a withdrawal of 500 on 14-01-2012
+- When she prints her bank statement
+- Then she would see
 
 date       |  credit |  debit | balance
 |   ---    |    ---  |  ---   |   ---   |
@@ -23,19 +23,19 @@ date       |  credit |  debit | balance
 
 # User Stories: #
 
-As a user
+- As a user
 So that I can add money to my bank account
 I would like to deposit cash into my bank account
 
-As a user
+- As a user
 So that I can use cash to spend
 I would like to withdraw cash from my bank account
 
-As a user
+- As a user
 So that I can see how much cash I have
 I would like to be able to print my bank statement
 
-As a user
+- As a user
 So that I can see what dates my deposits were made
 I would like to be able to see the dates on my bank statement
 
