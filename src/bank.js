@@ -3,6 +3,7 @@ class Bank {
   constructor() {
     this.bankBalance = 0.00
     this.date = 0
+    this.statement = [["date", "credit", "debit", "balance"]]
   }
 
   dateFormat(){
@@ -19,11 +20,15 @@ class Bank {
 
   reset(){
     this.bankBalance = 0;
+    this.statement = [["date", "credit", "debit", "balance"]]
   }
 
   deposit(input) {
     this.date = this.dateFormat()
     this.bankBalance += input
+
+    const newLine = [this.date, input.toFixed(2), 0, this.bankBalance.toFixed(2)]
+    this.statement.push(newLine)
     return this.bankBalance
   }
 
@@ -34,7 +39,12 @@ class Bank {
   }
 
   printStatement(){
-    return "date || credit || debit || balance\n01/01/2020 || 500.00 || || 500.00"
+    var itemized = ""
+    this.statement.forEach(function(item){
+      itemized += item + "\n"
+    })
+
+    return itemized
   }
 
 }

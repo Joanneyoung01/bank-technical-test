@@ -28,8 +28,10 @@ describe("bank", function(){
     });
 
     it("can print a statement", function(){
+      bank.reset()
       bank.deposit(100)
-      expect(bank.printStatement()).toEqual("date || credit || debit || balance\n01/01/2020 || 500.00 || || 500.00")
+      expect(bank.printStatement()).toEqual("date,credit,debit,balance\n1/1/2020,100.00,0,100.00\n")
+      console.log(bank.printStatement())
     });
 
     afterEach(() => {
