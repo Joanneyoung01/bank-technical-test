@@ -48,6 +48,14 @@ class Bank {
       var debit = (lines[2])
       var balance = (lines[3])
 
+      if (credit === 0) {
+        credit = ""
+      } 
+      
+      if (debit === 0) { 
+        debit = ""
+      } 
+
       formattedLine = date + " || " + credit + " || " + debit + " || " + balance
 
       itemized += formattedLine + "\n"
