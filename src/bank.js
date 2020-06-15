@@ -1,6 +1,11 @@
 class Bank {
 
+  constructor() {
+    this.bankBalance = 0
+  }
+
   deposit(number) {
-    return number
+    this.bankBalance += number
+    return this.bankBalance
   }
 }
