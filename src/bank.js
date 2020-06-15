@@ -40,10 +40,20 @@ class Bank {
 
   printStatement(){
     var itemized = ""
-    this.statement.forEach(function(item){
-      itemized += item + "\n"
+    var formattedLine = ""
+    this.statement.forEach(function(lines){
+
+      var date = (lines[0])
+      var credit = (lines[1])
+      var debit = (lines[2])
+      var balance = (lines[3])
+
+      formattedLine = date + " || " + credit + " || " + debit + " || " + balance
+
+      itemized += formattedLine + "\n"
     })
 
+    console.log(itemized)
     return itemized
   }
 
