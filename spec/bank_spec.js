@@ -24,6 +24,13 @@ describe("bank", function(){
     expect(bank.dateFormat()).toEqual("1/1/2020")
   });
 
+  it("can format bank balance", function(){
+    bank.deposit(100)
+    bank.deposit(100)
+    bank.deposit(100)
+    expect(bank.showBalance()).toEqual("£300.00")
+  });
+
   afterEach(() => {
     jasmine.clock().uninstall();
   });

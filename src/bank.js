@@ -17,6 +17,10 @@ class Bank {
     return day + "/" + month + "/" + year
   }
 
+  showBalance(){
+    return "£" + this.bankBalance.toFixed(2);
+  }
+
   deposit(input) {
     this.date = this.dateFormat()
     this.bankBalance += input
