@@ -5,10 +5,6 @@ class Bank {
     this.date = 0
   }
 
-  currencyFormat(number){
-    return "£" + number.toFixed(2);
-  }
-
   dateFormat(){
     var currentDate = new Date()
     var day = currentDate.getDate()
@@ -19,6 +15,10 @@ class Bank {
 
   showBalance(){
     return "£" + this.bankBalance.toFixed(2);
+  }
+
+  reset(){
+    this.bankBalance = 0;
   }
 
   deposit(input) {
@@ -33,8 +33,8 @@ class Bank {
     return this.bankBalance
   }
 
-  reset(){
-    this.bankBalance = 0;
+  printStatement(){
+    return "date || credit || debit || balance\n01/01/2020 || 500.00 || || 500.00"
   }
 
 }
