@@ -25,7 +25,16 @@ class Bank {
     this.date = this.dateFormat()
     this.bankBalance += input
     return this.bankBalance
-    
+  }
+
+  withdraw(input) {
+    this.date = this.dateFormat()
+    this.bankBalance -= input
+    return this.bankBalance
+  }
+
+  reset(){
+    this.bankBalance = 0;
   }
 
 }
