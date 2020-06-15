@@ -41,5 +41,6 @@ I would like to be able to see the dates on my bank statement
 
 # Domain modelling #
 
-| Object | Bank |
-|Functions| Deposit  Withdraw  Print |
+| Object | Functions |
+|   ---  |    ---    |
+| Bank   | Deposit  Withdraw  Print |
