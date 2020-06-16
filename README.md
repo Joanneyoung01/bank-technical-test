@@ -23,7 +23,7 @@ Please open this up on a browser CLI e.g Google Chrome dev tools.
 `$ var bank = new Bank` Initialize the bank object\
 `$ bank.deposit(100)`  Deposit into the bank\
 `$ bank.deposit(50)` Withdraw from the bank\
-`$ bank.printStatement()` Print bank statement\
+`$ bank.printStatement()` Print bank statement
 
 ## To run tests ##
 Please open `SpecRunner.html` on a browser
