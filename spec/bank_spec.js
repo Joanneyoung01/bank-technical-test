@@ -19,6 +19,18 @@ describe("bank", function(){
       bank.deposit(100)
       expect(bank.dateFormat()).toEqual("1/1/2020")
     });
+
+    it("throws error if deposit is NaN", function(){
+      expect(function(){
+        bank.deposit("hello")
+      }).toThrowError(TypeError);
+    });
+
+    it("throws error if deposit is below 0", function(){
+      expect(function(){
+        bank.deposit(-50)
+      }).toThrow(new Error("Please insert a valid number"));
+    });
   
     it("can format bank balance", function(){
       for (let i = 0; i < 3; i++) {

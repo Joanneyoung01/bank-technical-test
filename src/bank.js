@@ -28,19 +28,17 @@ class Bank {
     if (Number.isInteger(input) && (input > 0)) {
       this.date = this.dateFormat()
       this.bankBalance += input
-
       const newLine = [this.date, input.toFixed(2), 0, this.bankBalance.toFixed(2)]
       this.statement.push(newLine)
       return this.bankBalance
     }
-      throw new Error("Please insert a valid number");
+      throw new TypeError("Please insert a valid number");
   }
 
   withdraw(input) {
     if (input > this.bankBalance) {
       throw new Error("Sorry you have insufficient funds, please withdraw £" + this.bankBalance + " or less");
     }
-
     this.date = this.dateFormat()
     this.bankBalance -= input
     const newLine = [this.date, 0, input.toFixed(2), this.bankBalance.toFixed(2)]
