@@ -86,7 +86,6 @@ describe("bank", function(){
       jasmine.clock().mockDate(dayThree);
       bank.withdraw(500)
 
-      console.log(bank.statement)
       expect(bank.printStatement()).toEqual("date || credit || debit || balance\n14/1/2012 ||  || 500.00 || 2500.00\n13/1/2012 || 2000.00 ||  || 3000.00\n10/1/2012 || 1000.00 ||  || 1000.00\n")
     });
 
