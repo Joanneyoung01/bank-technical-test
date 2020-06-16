@@ -31,14 +31,17 @@ Done
 - As a user
 So that I can use cash to spend
 I would like to withdraw cash from my bank account
+Done
 
 - As a user
 So that I can see how much cash I have
 I would like to be able to print my bank statement
+Done
 
 - As a user
 So that I can see what dates my deposits were made
 I would like to be able to see the dates on my bank statement
+Done
 
 # Domain modelling #
 
