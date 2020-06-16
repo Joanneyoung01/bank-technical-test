@@ -67,20 +67,20 @@ describe("bank", function(){
       bank.reset()
       jasmine.clock().install();
 
-      var d = new Date("01, 01, 2012");
-      d.setDate(1);    
+      const dayOne = new Date(2012, 1, 10); 
+      jasmine.clock().mockDate(dayOne);   
       bank.deposit(1000)
 
-      const dayTwo = new Date(2012, 13, 01);
+      const dayTwo = new Date(2012, 1, 13);
       jasmine.clock().mockDate(dayTwo);
       bank.deposit(2000)
 
-      const dayThree = new Date(2012, 14, 01);
+      const dayThree = new Date(2012, 1, 14);
       jasmine.clock().mockDate(dayThree);
       bank.withdraw(500)
 
       console.log(bank.statement)
-      expect(bank.printStatement()).toEqual("date || credit || debit || balance\n14/01/2012 || || 500.00 || 2500.00\n13/01/2012 || 2000.00 ||  || 3000.00\n10/01/2012 || 1000.00 ||  || 1000.00")
+      expect(bank.printStatement()).toEqual("date || credit || debit || balance\n14/1/2012 ||  || 500.00 || 2500.00\n13/1/2012 || 2000.00 ||  || 3000.00\n10/1/2012 || 1000.00 ||  || 1000.00\n")
     });
 
     afterAll(() => {
