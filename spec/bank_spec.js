@@ -21,9 +21,9 @@ describe("bank", function(){
     });
   
     it("can format bank balance", function(){
-      bank.deposit(100)
-      bank.deposit(100)
-      bank.deposit(100)
+      for (let i = 0; i < 3; i++) {
+        bank.deposit(100)
+      }
       expect(bank.showBalance()).toEqual("£300.00")
     });
 
@@ -31,6 +31,13 @@ describe("bank", function(){
       bank.reset()
       bank.deposit(100)
       expect(bank.printStatement()).toEqual("date || credit || debit || balance\n1/1/2020 || 100.00 ||  || 100.00\n")
+    });
+
+    it("cannot dispense cash if bank balance is below requesting amount", function(){
+      bank.deposit(80)
+      expect(function(){
+        bank.withdraw(100)
+      }).toThrow(new Error("Sorry you have insufficient funds, please withdraw £80 or less"));
     });
 
     afterEach(() => {
