@@ -1,5 +1,34 @@
 ## Bank Technical Test
 
+## My approach ## 
+
+My approach was to break the brief into user stories. There seems to be one clear object in the brief - a Bank. This will be my main object. 
+
+Within this bank, users should be able to do three things 
+- Deposit 
+- Withdraw
+- Print statement
+
+For Deposits and Withdrawals, a use should be able to insert a number, that will either add or detract from the 'Bank Balance' (the balance should be an instance variable so that is can be constantly updated). In addition to the balance the date of each deposit or withdrawal should also be taken into account and updated through another instance variable 'Date'.
+
+Each time the user interacts with the bank, an element will be added to the statement. Within that element, this will be another array storing a date, Credit amount or Debit amount and a snapshot of the balance at that point in time - these four components should be inserted into a statement array.
+
+The function print statement will introduce headings "date, credit, debit and balance", as well as reversing the array so that the most recent activity is at the top. Below that, the itemized lines of the bank history - this is the generateStatement() function. 
+
+
+## To run the project: ##
+
+Please open this up on a browser CLI e.g Google Chrome dev tools.
+
+`$ var bank = new Bank` Initialize the bank object 
+`$ bank.deposit(100)`  Deposit into the bank
+`$ bank.deposit(50)` Withdraw from the bank
+`$ bank.printStatement()` Print bank statement
+
+## To run tests ##
+Please open `SpecRunner.html` on a browser
+
+
 # Requirements #
 You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
 Deposits, withdrawal.
