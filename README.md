@@ -42,12 +42,12 @@ I would like to be able to see the dates on my bank statement
 
 # Domain modelling #
 
-|  Object    |   Name   | Purpose |
-|   ---      |    ---   |   ---   |
-| Class      | Bank     |         | 
-| Function   | Deposit  | To add to total bank balance |
-| Function   | Withdraw | To minus from bank balance  |
-| Function   | Print    | To print the history of withdrawals/deposits |
+|  Object    |   Name    | Purpose |
+|   ---      |    ---    |   ---   |
+| Class      | Bank      |         | 
+|            | Deposit() | To add to total bank balance |
+|            | Withdraw()| To minus from bank balance  |
+|            | Print()   | To print the history of withdrawals/deposits |
 
 # User flow #
 

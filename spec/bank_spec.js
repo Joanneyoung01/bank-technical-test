@@ -40,7 +40,7 @@ describe("bank", function(){
       }).toThrow(new Error("Sorry you have insufficient funds, please withdraw £80 or less"));
     });
 
-    afterEach(() => {
+    afterEach(function(){
       jasmine.clock().uninstall();
     });
   });
@@ -63,7 +63,7 @@ describe("bank", function(){
       expect(bank.dateFormat()).toEqual("2/2/2020")
     });
 
-    afterEach(() => {
+    afterEach(function(){
       jasmine.clock().uninstall();
     });
   });
@@ -90,7 +90,7 @@ describe("bank", function(){
       expect(bank.printStatement()).toEqual("date || credit || debit || balance\n14/1/2012 ||  || 500.00 || 2500.00\n13/1/2012 || 2000.00 ||  || 3000.00\n10/1/2012 || 1000.00 ||  || 1000.00\n")
     });
 
-    afterAll(() => {
+    afterAll(function(){
       jasmine.clock().uninstall();
     });
   });
