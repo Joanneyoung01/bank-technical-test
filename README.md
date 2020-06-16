@@ -11,7 +11,7 @@ Within this bank, users should be able to do three things
 
 For Deposits and Withdrawals, a user should be able to insert a number, that will either add or detract from the 'Bank Balance' (the balance should be an instance variable so that is can be constantly updated). In addition to the balance, the date of each deposit or withdrawal should also be taken into account and updated through another instance variable 'Date'.
 
-Each time the user interacts with the bank, an element will be added to the 'bank statement' this should be an array so that it can hold a 2D array. On the first level of the array, this will be each interaction with the bank (withdrawals and deposits). Within each element, there should be 4 elements which stores a date, credit amount, debit amount and a snapshot of the balance at that point in time - these four components will make up the bank statement.
+Each time the user interacts with the bank, an element will be added to the 'bank statement' this should be an array so that it can hold a 2D array. On the first level of the array, this will be each interaction with the bank (withdrawals and deposits). On the second level for line, there should be 4 elements which stores a date, credit amount, debit amount and a snapshot of the balance at that point in time - these four components will make up the bank statement.
 
 The function print statement will introduce headings "date, credit, debit and balance", as well as reversing the array so that the most recent activity is at the top. Below that, the itemized lines of the bank history - this is the generateStatement() function. 
 
