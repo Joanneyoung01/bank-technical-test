@@ -82,4 +82,4 @@ Done
 
 # User flow #
 
-![Sequence Diagram](./src/images/sequence.diagram.png)
+![Sequence Diagram](src/images/sequence-diagram.png)
