@@ -36,14 +36,14 @@ class Bank {
   }
 
   withdraw(input) {
-    if (input > this.bankBalance) {
-      throw new Error("Sorry you have insufficient funds, please withdraw £" + this.bankBalance + " or less");
+    if (input < this.bankBalance) {
+      this.date = this.dateFormat()
+      this.bankBalance -= input
+      const newLine = [this.date, 0, input.toFixed(2), this.bankBalance.toFixed(2)]
+      this.statement.push(newLine)
+      return this.bankBalance
     }
-    this.date = this.dateFormat()
-    this.bankBalance -= input
-    const newLine = [this.date, 0, input.toFixed(2), this.bankBalance.toFixed(2)]
-    this.statement.push(newLine)
-    return this.bankBalance
+    throw new Error("Sorry you have insufficient funds, please withdraw £" + this.bankBalance + " or less");
   }
 
   printStatement(){
