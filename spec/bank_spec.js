@@ -2,7 +2,7 @@ describe("bank", function(){
 
   var bank = new Bank;
 
-  describe("bank balance is empty", function(){
+  describe("when bank balance is empty", function(){
 
     beforeEach(function(){
       bank.reset()
@@ -61,7 +61,7 @@ describe("bank", function(){
     });
   });
 
-  describe("after built up history of activity", function(){
+  describe("when bank account has built up activity", function(){
 
     it("can print a statement", function(){
       bank.reset()

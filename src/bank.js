@@ -41,7 +41,9 @@ class Bank {
     return this.bankBalance
   }
 
+
   printStatement(){
+    
     var itemized = ""
     var formattedLine = ""
     var arr = this.statement.reverse();
@@ -50,18 +52,10 @@ class Bank {
     arr.forEach(function(lines){
 
       var date = (lines[0])
-      var credit = (lines[1])
-      var debit = (lines[2])
+      var credit = lines[1] === 0 ? "" : lines[1]
+      var debit = lines[2] === 0 ? "" : lines[2]
       var balance = (lines[3])
-
-      if (credit === 0) {
-        credit = ""
-      } 
       
-      if (debit === 0) { 
-        debit = ""
-      } 
-
       formattedLine = date + " || " + credit + " || " + debit + " || " + balance
 
       itemized += formattedLine + "\n"
@@ -70,3 +64,4 @@ class Bank {
   }
 
 }
+
