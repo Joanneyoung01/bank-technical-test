@@ -51,4 +51,4 @@ I would like to be able to see the dates on my bank statement
 
 # User flow #
 
-![Sequence Diagram]()
+![Sequence Diagram](src/images/sequence.diagram.png)
